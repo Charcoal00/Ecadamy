@@ -1,19 +1,21 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
-// Verify general user JWT.
-exports.verifyToken = (req, res, next) => {
-    const token = req.headers.authorization?.split(" ")[1];
-    if (!token)
-        return res
-            .status(401)
-            .json({ message: "Access Denied. No token provided." });
+exports.verifyToken = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Authorization token required' });
+    }
+
+    const token = authHeader.split(' ')[1];
 
     try {
-        const verified = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = verified;
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = await User.findById(decoded.userId).select('-password');
         next();
-    } catch (err) {
-        res.status(403).json({ message: "Invalid Token" });
+    } catch (error) {
+        res.status(401).json({ message: 'Invalid or expired token' });
     }
 };
 
@@ -23,7 +25,7 @@ exports.verifyAdminToken = (req, res, next) => {
     if (!token)
         return res
             .status(401)
-            .json({ message: "Access Denied. No token provided." });
+            .json({ message: "Access Denied. No token was provided." });
 
     try {
         const verified = jwt.verify(token, process.env.ADMIN_JWT_SECRET);

@@ -74,7 +74,7 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 -   **Method:** `POST`
 -   **Endpoint:** `{server}/aapi/users/getUser`
 -   **Purpose:** Allows existing users to log in using their phone number and password.
--   **Note:** Make sure to include token in rour headers when sending request. This token expires after 1h
+-   **Note:** Make sure to include token in your headers when sending request. This token expires after 1h.
 -   **Request Body Example:**
     ```txt
       headers: {

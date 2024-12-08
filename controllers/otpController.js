@@ -17,9 +17,8 @@ exports.sendOtp = async (req, res) => {
             .json({ success: true, message: "This phonenumber already exist" });
     }
     try {
-        // Generate a random OTP
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
-        otpStore.set(phone, otp); // Store OTP in memory
+        otpStore.set(phone, otp);
 
         await sendOtp(phone, otp);
 

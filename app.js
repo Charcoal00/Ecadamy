@@ -30,7 +30,6 @@ mongoose
 // Routes
 app.use("/api/otp", otpRoutes);
 app.use("/api/users", userRoutes);
-
 app.use("/api/admin", adminRoutes);
 
 // Start server
