@@ -58,7 +58,7 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 
 ### 4. Login in user
 
--   **Method:** `POST`
+-   **Method:** `GET`
 -   **Endpoint:** `{server}/aapi/users/login`
 -   **Purpose:** Allows existing users to log in using their phone number and password.
 -   **Request Body Example:**
@@ -71,9 +71,9 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 
 ### 5. Get user data
 
--   **Method:** `POST`
--   **Endpoint:** `{server}/aapi/users/getUser`
--   **Purpose:** Allows existing users to log in using their phone number and password.
+-   **Method:** `GET`
+-   **Endpoint:** `{server}/api/users/getUser`
+-   **Purpose:** Fetches the data of the logged in user.
 -   **Note:** Make sure to include token in your headers when sending request. This token expires after 1h.
 -   **Request Body Example:**
     ```txt
@@ -86,6 +86,7 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 ## User Object Structure
 
 The user object returned by the API contains the following fields:
+**Note:** Ignore user \_id as this will be given to the user once registered on the database.
 
 1. \_id - Unique identifier for the user.
 2. firstName - The user's first name.
