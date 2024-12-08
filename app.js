@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const otpRoutes = require("./routes/otpRoutes");
 const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 app.use(bodyParser.json());
@@ -29,6 +30,8 @@ mongoose
 // Routes
 app.use("/api/otp", otpRoutes);
 app.use("/api/users", userRoutes);
+
+app.use("/api/admin", adminRoutes);
 
 // Start server
 const PORT = process.env.PORT || 3000;
