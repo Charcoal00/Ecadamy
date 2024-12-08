@@ -1,5 +1,11 @@
 # Ecadamy backend project
 
+
+
+
+## server link
+https://ecadamy.onrender.com
+
 ## api endpoints
 
 1. Method: POST
@@ -14,8 +20,6 @@
 4. Method: POST
    Endpoint: {server}/aapi/users/login
    Purpose: Allow user to login using phone number and password.
-
-   
 
 ## .user objects
 

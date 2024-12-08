@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require("cors")
+const cors = require("cors");
 
 const otpRoutes = require("./routes/otpRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -19,14 +19,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-
 // Connect to MongoDB
 
 mongoose
-    .connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(process.env.MONGO_URI, {})
     .then(() => console.log("DB connected"))
     .catch((err) => console.error("DB connection error:", err));
 
