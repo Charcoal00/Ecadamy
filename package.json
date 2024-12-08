@@ -7,9 +7,9 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "code-savant",
   "license": "ISC",
-  "description": "",
+  "description": "user validation and authentication api",
   "dependencies": {
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
