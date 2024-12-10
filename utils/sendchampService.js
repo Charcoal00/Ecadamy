@@ -6,7 +6,7 @@ const sendOtp = async (phone, otp) => {
         to: phone, 
         message: `Your OTP is ${otp}`,
         sender_name: "Sendchamp", 
-        route: "dnd", //delivery route
+        route: "international", //delivery route
     };
 
     try {
