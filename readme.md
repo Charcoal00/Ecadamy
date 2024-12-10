@@ -86,7 +86,6 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 ## User Object Structure
 
 The user object returned by the API contains the following fields:
-**Note:** Ignore user \_id as this will be given to the user once registered on the database.
 
 1. \_id - Unique identifier for the user.
 2. firstName - The user's first name.
@@ -94,3 +93,5 @@ The user object returned by the API contains the following fields:
 4. classTitle - The class or course associated with the user.
 5. email - The user's email address.
 6. phone - The user's phone number.
+
+**Note:** Ignore user \_id as this will be given to the user once registered on the database.
