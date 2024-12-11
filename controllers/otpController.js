@@ -1,5 +1,4 @@
 const { sendOtp } = require("../utils/sendchampService");
-const bodyParser = require("body-parser");
 const User = require("../models/User");
 const otpStore = new Map();
 
