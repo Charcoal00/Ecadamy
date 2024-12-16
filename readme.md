@@ -58,8 +58,8 @@ The Ecadamy backend provides a set of APIs to manage user authentication and reg
 
 ### 4. Login in user
 
--   **Method:** `GET`
--   **Endpoint:** `{server}/aapi/users/login`
+-   **Method:** `POST`
+-   **Endpoint:** `{server}/api/users/login`
 -   **Purpose:** Allows existing users to log in using their phone number and password.
 -   **Request Body Example:**
     ```json
